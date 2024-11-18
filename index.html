@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inserindo valores em um vetor por meio de input html.</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <fieldset>
+                <legend id="titulo">Adicione os valores ao vetor.</legend>
+                <label for="valor_digitado">Valor:</label>
+                <input type="number" id="valor_digitado"/>
+                <button type="button" id="Valor_digitado" onclick="ADD_AUX()">Adicionar</button>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Escolha o algorítimo para ordenar.</legend>
+                <select id="select">
+                    <option value="bs">Bubble Sort</option>
+                    <option value="ss">Selection Sort</option>
+                    <option value="qs">Quick Sort</option>
+                </select>
+                <button type="button" id="button">Ordenar</button>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Embaralhar.</legend>
+                <select id="select_b">
+                    <option value="sw">Swap</option>
+                    <option value="sh1">Shuffle-1</option>
+                    <option value="sh2">Shuffle-2</option>
+                </select>
+                <button type="button" id="button_2">Misturar</button>
+                <br>
+                <br>
+                <label for="valor_i">Posição 1 para Swap:</label>
+                <input type="number" name="valor_i" id="valor_i"/>
+                <br>
+                <br>
+                <label for="valor_i">Posição 2 para Swap:</label>
+                <input type="number" name="valor_j" id="valor_j"/>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Valores Adicionados</legend>
+                <ul></ul>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Vetor Original</legend>
+                <p id="vet"></p>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Vetor Ordenado</legend>
+                <span id="vet2"></span>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend id="titulo">Vetor Embaralhado</legend>
+                <span id="vet3"></span>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="ordenando.js"></script>
+    <script>
+        let select = document.querySelector("#select");
+        let button = document.querySelector("#button");
+        button.addEventListener("click", () => {
+            if(select.value == "bs"){
+                BS();
+            }else if(select.value == "ss"){
+                SS();
+            }else if(select.value == "qs"){
+                QS();
+            }
+        });
+
+        let selectb = document.querySelector("#select_b");
+        let button2 = document.querySelector("#button_2");
+        button2.addEventListener("click", () => {
+            if(selectb.value == "sw"){
+                SW();
+            }else if(selectb.value == "sh1"){
+                SH1();
+            }else if(selectb.value == "sh2"){
+                SH2();
+            }
+        });
+    </script>
+
+</body>
+</html>
